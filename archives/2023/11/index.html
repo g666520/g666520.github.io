@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的技术与生活——categories | my</title>
+  <title>我的技术与生活——小站首页 | my</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="shortcut icon" href="/imgs/shortcut-icon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/public.css" />
@@ -16,7 +16,7 @@
 
   <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <script>
-    document.title = `我的技术与生活——categories`
+    document.title = `我的技术与生活——小站首页`
   </script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
@@ -346,14 +346,103 @@
 </div></div>
       <div id="main-container" class="main-container">
 
+    
 
-  <div class="categories">
-  <h2 class="categories-title">小站分类</h2>
-  <div class="categories-list">
-    <ul class="categories-list"><li class="categories-list-item"><a class="categories-list-link" href="/categories/3D/">3D</a><span class="categories-list-count">1</span></li><li class="categories-list-item"><a class="categories-list-link" href="/categories/AI/">AI</a><span class="categories-list-count">3</span></li><li class="categories-list-item"><a class="categories-list-link" href="/categories/Game/">Game</a><span class="categories-list-count">1</span></li><li class="categories-list-item"><a class="categories-list-link" href="/categories/hexo/">hexo</a><span class="categories-list-count">1</span></li></ul>
+<div class="index">
+  <div class="index-left">
+    
+      <div class="index-article">
+        <!-- <img class="index-article--cover" src="/imgs/default-cover.webp" alt=""> -->
+        <div class="index-article--box">
+          <img class="index-article--cover" data-cover="imgs/default-cover.webp" alt="">
+        </div>
+        <div class="index-article--content">
+          <a href="/2023/11/02/%E6%96%B0%E6%9C%BA%E7%BC%96%E7%A8%8B%E9%85%8D%E7%BD%AE/">新机编程配置 </a>
+          <div>
+            
+            
+              <p>
+                <a class="-link" href="/tags/%E9%85%8D%E7%BD%AE%E7%B1%BB/" rel="tag">配置类</a>
+              </p>
+            
+          </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+    
+  </div>
+  <div class="index-center">
+    
+  </div>
+  <div class="index-right">
+    <div class="index-right-wrapper">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/3D/">3D</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Game/">Game</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">Hexo</a></li></ul>
+      <ul class="tags" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE%E7%B1%BB/" rel="tag">配置类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/" rel="tag">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blender%E5%BB%BA%E6%A8%A1/" rel="tag">blender建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI%E8%AE%BE%E8%AE%A1%E7%BB%98%E7%94%BB/" rel="tag">AI设计绘画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI%E7%BB%98%E7%94%BB/" rel="tag">AI绘画</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI%E6%8B%96%E6%8B%BD%E6%94%B9%E5%8F%98%E5%9B%BE%E7%89%87%E5%8A%A8%E4%BD%9C%E6%A0%B7%E8%B2%8C/" rel="tag">AI拖拽改变图片动作样貌</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">2023年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">2023年05月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">2021年07月</a><span class="archive-list-count">1</span></li></ul>
+    </div>
   </div>
 </div>
 
+
+<script>
+  var allImgBoxs = document.querySelectorAll('.index-article--box');
+  var windowHeight = window.innerHeight;
+  var boxs = Array.from(allImgBoxs);
+  var timer = null;
+  boxs.forEach((box, idx) => {
+    if (!window.loadImageSet || !window.loadImageSet.includes(idx)) {
+      box.classList.add('img-loading');
+    } else {
+      const imgDom = box.querySelector('img');
+      imgDom.src = imgDom.dataset.cover;
+    }
+  });
+
+  function scrollFn() {
+    if (timer) {
+      return;
+    }
+    timer = setTimeout(() => {
+      loadImage();
+      timer = null;
+    }, 100)
+  }
+
+  if (!window.loadedImage) {
+    document.addEventListener('scroll', scrollFn);
+  }
+
+  function loadImage() {
+    const doc = document.documentElement;
+    const scrollTop = doc.scrollTop;
+    if (boxs.every(box => box.loadedImage)) {
+      document.removeEventListener('scroll', scrollFn);
+      window.loadedImage = 1;
+      return;
+    }
+    boxs.forEach((box, idx) => {
+      if (box.loadedImage) {
+        return;
+      }
+      if (box.getBoundingClientRect().top < windowHeight) {
+        const imgDom = box.querySelector('img');
+        imgDom.src = imgDom.dataset.cover;
+        imgDom.onload = () => {
+          box.classList.remove('img-loading')
+          box.loadedImage = true;
+          if (window.loadImageSet) {
+            window.loadImageSet.push(idx);
+          } else {
+            window.loadImageSet = [];
+            window.loadImageSet.push(idx);
+          }
+        }
+      }
+    });
+  }
+
+  window.loadImageFn = loadImage;
+</script> 
 </div>
       <div class="main-right-wrapper"><div class="main-right">
   <div class="main-right--board">
