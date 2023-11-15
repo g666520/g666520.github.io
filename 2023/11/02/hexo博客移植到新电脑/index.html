@@ -395,6 +395,20 @@ pre:active {
     <article class="article-content">
       <p>换电脑以后如何转移hexo。</p>
 <p><strong>我们要知道</strong>，在我们的hexo博客文件中有一个<code>.gitignore</code>，这个文件就是在你同步的时候不把某些文件上传到<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=github&spm=1001.2101.3001.7020">github</a>上，所以我们直接从github下拉文件到新电脑是行不通的。</p>
+<ol>
+<li><p>首先删除原来博客文件的node_modules</p>
+</li>
+<li><p>配置git ssh，nodejs等</p>
+</li>
+<li><p>下载hexo </p>
+</li>
+<li><p>npm install hexo-deployer-git –save</p>
+<p>再配图，使得上传可显示图片。</p>
+<p>设置typra偏好。</p>
+<p>post_asset_folder 设置为true.</p>
+<p>npm install hexo-asset-img –save</p>
+</li>
+</ol>
 
     </article>
     
