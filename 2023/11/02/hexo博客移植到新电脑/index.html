@@ -193,7 +193,7 @@
   const ipt = document.querySelector('#search-input')
   const btn = document.querySelector('#search-btn')
   const layer = document.querySelector('#search-layer')
-  const posts = JSON.parse(`[{"title":"3d-blender","path":"2023/05/23/3d-blender/"},{"title":"RunwayML-drawidea","path":"2023/05/22/RunwayML-drawidea/"},{"title":"Stable Diffusion","path":"2023/05/22/Stable-Diffusion/"},{"title":"DragGAN","path":"2023/05/22/DragGAN/"},{"title":"hexo博客移植到新电脑","path":"2023/11/02/hexo博客移植到新电脑/"},{"title":"心性以及思考","path":"2023/11/15/心性以及思考/"},{"title":"Hello World@~@","path":"2023/11/15/hello-world/"},{"title":"移动硬盘玩游戏","path":"2023/05/23/移动硬盘玩游戏/"},{"title":"虚拟机安装","path":"2023/11/02/虚拟机安装/"},{"title":"新机编程配置","path":"2023/11/02/新机编程配置/"},{"title":"test","path":"2026/04/08/test/"}]`)
+  const posts = JSON.parse(`[{"title":"3d-blender","path":"2023/05/23/3d-blender/"},{"title":"DragGAN","path":"2023/05/22/DragGAN/"},{"title":"RunwayML-drawidea","path":"2023/05/22/RunwayML-drawidea/"},{"title":"Stable Diffusion","path":"2023/05/22/Stable-Diffusion/"},{"title":"hexo博客移植到新电脑","path":"2023/11/02/hexo博客移植到新电脑/"},{"title":"Hello World@~@","path":"2023/11/15/hello-world/"},{"title":"test","path":"2026/04/08/test/"},{"title":"心性以及思考","path":"2023/11/15/心性以及思考/"},{"title":"移动硬盘玩游戏","path":"2023/05/23/移动硬盘玩游戏/"},{"title":"新机编程配置","path":"2023/11/02/新机编程配置/"},{"title":"虚拟机安装","path":"2023/11/02/虚拟机安装/"}]`)
   ipt.addEventListener('keyup', e => {
     if (e.key === 'Enter') {
       handleSearch()
@@ -394,6 +394,22 @@ pre:active {
     </div>
     <article class="article-content">
       <p>换电脑以后如何转移hexo。</p>
+<p>需要准备的东西：</p>
+<blockquote>
+<p>1装核心工具NodeJS和Git</p>
+<p>(安装程序时，请确保勾选 <code>Add to PATH</code> 选项，这会让系统能随时在命令行中找到NodeJS)</p>
+<p>2 node -v<br>   npm -v<br>   git -v</p>
+<p>3 重新编写或者新使用需要安装Hexo博客框架等 npm install hexo-cli -g   </p>
+<p>hexo init     npm install   hexo server本地启动服务查看</p>
+<p>4 细节有安装主题等等  npm i hexo-theme-stellar –save</p>
+<p>注意版本变动（从 Hexo 7.x 版本开始，通过 npm install 安装的主题会存放在 node_modules 目录下，而不再是 themes 文件夹）</p>
+<p>5 远程代码平台的话需要打开配置进行配置 config   </p>
+<p>deploy:</p>
+<p> type: ‘git’</p>
+<p> repo: <a target="_blank" rel="noopener" href="https://github.com/g666520/g666520.github.io.git">https://github.com/g666520/g666520.github.io.git</a></p>
+<p> branch: ganpage</p>
+<p>6  支持  http设置密钥30天之类的  或者使用ssh登录同步</p>
+</blockquote>
 <p><strong>我们要知道</strong>，在我们的hexo博客文件中有一个<code>.gitignore</code>，这个文件就是在你同步的时候不把某些文件上传到<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=github&spm=1001.2101.3001.7020">github</a>上，所以我们直接从github下拉文件到新电脑是行不通的。</p>
 <ol>
 <li><p>首先删除原来博客文件的node_modules</p>
@@ -409,6 +425,44 @@ pre:active {
 <p>npm install hexo-asset-img –save</p>
 </li>
 </ol>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">进入gitbash
+cd  e:  cd  blog<span class="token operator">/</span>    node <span class="token operator">-</span>v     npm  <span class="token operator">-</span>v   
+d
+hexo  <span class="token operator">-</span>v
+进入博客。
+ls <span class="token operator">-</span>l 看下有哪些文件
+hexo server 启动
+前面配置好环境变量那些才可以快捷切入进博客文件下启动
+localhost:<span class="token number">4000</span>访问。
+hexo n <span class="token string">"ssss文章名字"</span>
+
+到 blog<span class="token operator">/</span> 目录，每次可以先清理一下然后生成
+
+hexo clean  hexo g
+
+然后再启动
+
+hexo  clean 
+hexo  g
+hexo s 
+然后就发布成功了。主要要注意markdown语法
+
+
+
+部署远端需要安装hexo插件  进入配置文件配置仓库地址
+
+最后部署远端就是hexo  d  输入远端账户密码 github
+
+<span class="token operator">=</span><span class="token operator">=</span>可以开代理<span class="token operator">=</span><span class="token operator">=</span>
+
+报错可以ai  agent辅助，有些可能是不支持了，改版了等。比如这次遇到报错原因是
+
+remote: Invalid username <span class="token operator">or</span> token<span class="token punctuation">.</span> Password authentication <span class="token operator">is</span> <span class="token operator">not</span> supported <span class="token keyword">for</span> Git operations
+
+不再支持这种方式了。 
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
     </article>
     
