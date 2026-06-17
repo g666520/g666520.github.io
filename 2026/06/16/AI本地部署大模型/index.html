@@ -193,7 +193,7 @@
   const ipt = document.querySelector('#search-input')
   const btn = document.querySelector('#search-btn')
   const layer = document.querySelector('#search-layer')
-  const posts = JSON.parse(`[{"title":"3d-blender","path":"2023/05/23/3d-blender/"},{"title":"AI本地部署大模型","path":"2026/06/16/AI本地部署大模型/"},{"title":"Hello World@~@","path":"2023/11/15/hello-world/"},{"title":"RunwayML-drawidea","path":"2023/05/22/RunwayML-drawidea/"},{"title":"hexo博客移植到新电脑","path":"2023/11/02/hexo博客移植到新电脑/"},{"title":"Stable Diffusion","path":"2023/05/22/Stable-Diffusion/"},{"title":"DragGAN","path":"2023/05/22/DragGAN/"},{"title":"域名教育邮箱等","path":"2026/04/27/域名教育邮箱等/"},{"title":"test","path":"2026/04/08/test/"},{"title":"心性以及思考","path":"2023/11/15/心性以及思考/"},{"title":"新机编程配置","path":"2023/11/02/新机编程配置/"},{"title":"移动硬盘玩游戏","path":"2023/05/23/移动硬盘玩游戏/"},{"title":"虚拟机安装","path":"2023/11/02/虚拟机安装/"},{"title":"节点以及搭建网站知识","path":"2026/04/09/节点以及搭建网站知识/"}]`)
+  const posts = JSON.parse(`[{"title":"3d-blender","path":"2023/05/23/3d-blender/"},{"title":"AI本地部署大模型","path":"2026/06/16/AI本地部署大模型/"},{"title":"DragGAN","path":"2023/05/22/DragGAN/"},{"title":"RunwayML-drawidea","path":"2023/05/22/RunwayML-drawidea/"},{"title":"Stable Diffusion","path":"2023/05/22/Stable-Diffusion/"},{"title":"Hello World@~@","path":"2023/11/15/hello-world/"},{"title":"hexo博客移植到新电脑","path":"2023/11/02/hexo博客移植到新电脑/"},{"title":"test","path":"2026/04/08/test/"},{"title":"域名教育邮箱等","path":"2026/04/27/域名教育邮箱等/"},{"title":"心性以及思考","path":"2023/11/15/心性以及思考/"},{"title":"新机编程配置","path":"2023/11/02/新机编程配置/"},{"title":"移动硬盘玩游戏","path":"2023/05/23/移动硬盘玩游戏/"},{"title":"虚拟机安装","path":"2023/11/02/虚拟机安装/"},{"title":"节点以及搭建网站知识","path":"2026/04/09/节点以及搭建网站知识/"}]`)
   ipt.addEventListener('keyup', e => {
     if (e.key === 'Enter') {
       handleSearch()
@@ -335,7 +335,7 @@
       </p>
       <p class="main-left--subtitle">
         <span>上线时间：</span>
-        <span>1122天</span>
+        <span>1123天</span>
       </p>
       <p class="main-left--subtitle">
         <span>当前版本：</span>
@@ -393,8 +393,250 @@ pre:active {
       </div>
     </div>
     <article class="article-content">
-      <p>sd </p>
-<p>sd</p>
+      <h1 id="Claude-Code-Ollama（电脑性能不行的话部署鸡肋）"><a href="#Claude-Code-Ollama（电脑性能不行的话部署鸡肋）" class="headerlink" title="Claude Code + Ollama（电脑性能不行的话部署鸡肋）"></a>Claude Code + Ollama（电脑性能不行的话部署鸡肋）</h1><h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><p>1.安装<strong>Claude Code 官方桌面版</strong></p>
+<p>2.安装最新版 <strong>Ollama 客户端</strong></p>
+<p>开源模型推荐：<a target="_blank" rel="noopener" href="https://ollama.com/library/qwen3.6">Qwen 3.6</a>/<a target="_blank" rel="noopener" href="https://ollama.com/library/qwen3.5">3.5</a> 、<a target="_blank" rel="noopener" href="https://ollama.com/library/gemma4">Gemma4</a>、<a target="_blank" rel="noopener" href="https://ollama.com/library/deepseek-r1">Deepseek R1</a>、<a target="_blank" rel="noopener" href="https://ollama.com/library/glm-4.7-flash">GLM</a>等，根据自己显存的大小来选择对应的模型</p>
+<p>3.安装ccswitch</p>
+<p>4.安装git</p>
+<h2 id="二、开始部署"><a href="#二、开始部署" class="headerlink" title="二、开始部署"></a>二、开始部署</h2><h3 id="1-安装ollama和模型"><a href="#1-安装ollama和模型" class="headerlink" title="1.安装ollama和模型"></a>1.安装ollama和模型</h3><p>1.安装好ollama以后，模型选不是c盘的存储</p>
+<p>安装默认有环境变量，运行下面</p>
+<p>ollama run qwen3.5:9b </p>
+<p>qwen3.5:0.8b</p>
+<p>ollama run qwen2.5:1.5b</p>
+<h3 id="2-配置ccswitch"><a href="#2-配置ccswitch" class="headerlink" title="2.配置ccswitch"></a>2.配置ccswitch</h3><p>本地模型API key可以随便填</p>
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260616205737900.png" class="" title="image-20260616205737900">
+
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260616205817616.png" class="" title="image-20260616205817616">
+
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260616205856335.png" class="" title="image-20260616205856335">
+
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260616205921891.png" class="" title="image-20260616205921891">
+
+
+
+<h4 id="配置启动路由"><a href="#配置启动路由" class="headerlink" title="配置启动路由"></a>配置启动路由</h4><img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260616210017315.png" class="" title="image-20260616210017315">
+
+
+
+<h3 id="3-检查是否开启虚拟化功能"><a href="#3-检查是否开启虚拟化功能" class="headerlink" title="3.检查是否开启虚拟化功能"></a>3.检查是否开启虚拟化功能</h3><img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260617002936014.png" class="" title="image-20260617002936014">
+
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260616210126302.png" class="" title="image-20260616210126302">
+
+
+
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260616210139256.png" class="" title="image-20260616210139256">
+
+
+
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260616210156393.png" class="" title="image-20260616210156393">
+
+
+
+
+
+<h3 id="4-cc-switch-配置供应商"><a href="#4-cc-switch-配置供应商" class="headerlink" title="4.cc switch 配置供应商"></a>4.cc switch 配置供应商</h3><img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260617004903119.png" class="" title="image-20260617004903119">
+
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260617005114107.png" class="" title="image-20260617005114107">
+
+
+
+<p><strong>CC Switch 相关配置:</strong></p>
+<p>请求地址：<a target="_blank" rel="noopener" href="http://127.0.0.1:11434/v1">http://127.0.0.1:11434/v1</a></p>
+<p>API 格式：OpenAI Chat Completions</p>
+<p>认证字段选择：ANTHROPIC_API_KEY</p>
+<p>Claude Code 桌面版在自定义的配置文件末尾需要加入注册表修改命令：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&quot;inferenceModels&quot;&#x3D;&quot;[\&quot;haiku\&quot;,\&quot;sonnet\&quot;,\&quot;opus\&quot;]&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>让 CC Switch 强行注入模型名称到claude Code里进行显示！</strong></p>
+<h3 id="5-打开开发者模式claudcode"><a href="#5-打开开发者模式claudcode" class="headerlink" title="5.打开开发者模式claudcode"></a>5.打开开发者模式claudcode</h3><img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260617004106700.png" class="" title="image-20260617004106700">
+
+
+
+
+
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260617004234109.png" class="" title="image-20260617004234109">
+
+
+
+
+
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260617004343492.png" class="" title="image-20260617004343492">
+
+<p>url是ccswith的，本地模型api key填ccsitch的即可。</p>
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260617005554788.png" class="" title="image-20260617005554788">
+
+
+
+
+
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260617010813455.png" class="" title="image-20260617010813455">
+
+<p>Claude Code 桌面版在自定义的配置文件末尾需要加入注册表修改命令：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&quot;inferenceModels&quot;&#x3D;&quot;[\&quot;haiku\&quot;,\&quot;sonnet\&quot;,\&quot;opus\&quot;]&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<img src="/2026/06/16/AI%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%A4%A7%E6%A8%A1%E5%9E%8B/image-20260617011108837.png" class="" title="image-20260617011108837">
+
+<p>改好以后保存运行</p>
+<h1 id="可能有人会疑问：Claude-Code-到底强在哪里？"><a href="#可能有人会疑问：Claude-Code-到底强在哪里？" class="headerlink" title="可能有人会疑问：Claude Code 到底强在哪里？"></a>可能有人会疑问：Claude Code 到底强在哪里？</h1><p>很多人第一次接触 Claude Code 时，都会误以为：这只是一个“高级聊天工具”。但实际上，它和普通 AI 聊天客户端完全不是一个东西。</p>
+<p>传统 AI：你问一句，它回答一句。而 Claude Code：会真正读取整个项目结构。</p>
+<p>例如：</p>
+<p>src/</p>
+<p>components/</p>
+<p>package.json</p>
+<p>docker-compose.yml</p>
+<pre class="line-numbers language-none"><code class="language-none">然后：<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>自动分析代码</li>
+<li>修改文件</li>
+<li>安装依赖</li>
+<li>执行命令</li>
+<li>修复报错</li>
+<li>重新运行项目</li>
+</ul>
+<p>整个过程更像：</p>
+<p>AI + IDE + Terminal</p>
+<pre class="line-numbers language-none"><code class="language-none">而不是普通聊天机器人。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这也是为什么很多开发者开始把它称为：AI 开发 Agent</p>
+<h1 id="Ollama-Claude-Code-是怎么实现的？"><a href="#Ollama-Claude-Code-是怎么实现的？" class="headerlink" title="Ollama + Claude Code 是怎么实现的？"></a>Ollama + Claude Code 是怎么实现的？</h1><p>而最近越来越多人开始尝试：</p>
+<p>Claude Code + Ollama</p>
+<p>简单来说就是：</p>
+<p>让 Claude Code 继续负责：</p>
+<ul>
+<li>Agent 能力</li>
+<li>项目操作</li>
+<li>自动化执行</li>
+</ul>
+<p>而真正的大脑，则交给本地模型。</p>
+<p>例如：</p>
+<ul>
+<li>Qwen</li>
+<li>DeepSeek</li>
+<li>Gemma</li>
+<li>GLM</li>
+</ul>
+<p>这些模型都可以通过 Ollama 本地运行。</p>
+<p>但问题在于：</p>
+<p>Claude Code 默认只支持 Claude 官方 API。</p>
+<p>于是：</p>
+<p>CC Switch 这种工具就出现了。</p>
+<p>它本质上其实是一个：</p>
+<p>API 转发层</p>
+<p>Claude Code 以为自己正在调用 Claude。</p>
+<p>但实际上：</p>
+<p>请求已经被 CC Switch 转发到了本地 Ollama。</p>
+<p>于是最终实现：</p>
+<p>Claude Code 外壳 </p>
+<p>+ </p>
+<p>本地 AI 模型</p>
+<p>实际体验怎么样？</p>
+<p>这次我主要测试了：</p>
+<ul>
+<li>Qwen</li>
+<li>DeepSeek</li>
+</ul>
+<p>几个本地模型。</p>
+<p>实际体验下来。</p>
+<p>如果只是：</p>
+<ul>
+<li>HTML 页面</li>
+<li>小型项目</li>
+<li>自动化脚本</li>
+<li>Docker</li>
+<li>VPS 运维</li>
+</ul>
+<p>其实已经相当能用了。</p>
+<p>例如一句话：</p>
+<blockquote>
+<p>“帮我生成一个赛博朋克风格的个人主页网站。”</p>
+</blockquote>
+<p>本地模型会直接：</p>
+<ul>
+<li>创建项目</li>
+<li>生成网页</li>
+<li>添加动画</li>
+<li>配置特效</li>
+<li>自动运行</li>
+</ul>
+<p>整个过程已经有一种：</p>
+<h1 id="AI-正在真正工作的感觉"><a href="#AI-正在真正工作的感觉" class="headerlink" title="AI 正在真正工作的感觉"></a>AI 正在真正工作的感觉</h1><p>尤其在 Claude Code 的 Agent 模式下，这种观感会非常强。</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="但本地模型目前仍然存在明显短板"><a href="#但本地模型目前仍然存在明显短板" class="headerlink" title="但本地模型目前仍然存在明显短板"></a>但本地模型目前仍然存在明显短板</h1><p>当然。</p>
+<p>现阶段的本地模型，还远远无法完全替代 Claude Sonnet。</p>
+<p>特别是：</p>
+<ul>
+<li>长上下文理解</li>
+<li>大型工程能力</li>
+<li>多步骤推理</li>
+<li>项目架构能力</li>
+</ul>
+<p>差距仍然明显。</p>
+<p>尤其项目一旦复杂起来。</p>
+<p>本地模型就很容易：</p>
+<ul>
+<li>逻辑混乱</li>
+<li>修改错误文件</li>
+<li>死循环修 Bug</li>
+<li>上下文遗忘</li>
+</ul>
+<p>这一点目前和 Claude Sonnet 仍然有不小差距。</p>
+<h1 id="多模态兼容性目前问题也不少"><a href="#多模态兼容性目前问题也不少" class="headerlink" title="多模态兼容性目前问题也不少"></a>多模态兼容性目前问题也不少</h1><p>另外这次测试中，还有一个比较明显的问题：</p>
+<h1 id="Vision-多模态兼容性"><a href="#Vision-多模态兼容性" class="headerlink" title="Vision 多模态兼容性"></a>Vision 多模态兼容性</h1><p>例如：</p>
+<p>虽然 Ollama 已经支持不少 Vision 模型。</p>
+<p>但：</p>
+<p>Claude Code + CC Switch 这套链路，目前对于图片支持并不完整。</p>
+<p>经常会出现：</p>
+<p>你明明上传了图片。</p>
+<p>AI 却提示：</p>
+<blockquote>
+<p>“我没有看到图片。”</p>
+</blockquote>
+<p>本质原因其实不是模型不支持 Vision。</p>
+<p>而是：</p>
+<p>Claude Code 本身更偏向：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">代码 Agent<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>而不是：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">多模态聊天客户端<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>所以目前：</p>
+<ul>
+<li>编程</li>
+<li>Terminal</li>
+<li>自动化</li>
+</ul>
+<p>体验很好。</p>
+<p>但：</p>
+<ul>
+<li>图片</li>
+<li>OCR</li>
+<li>多模态聊天</li>
+</ul>
+<p>兼容性仍然一般。</p>
+<h1 id="本地-AI-Agent，可能才刚刚开始"><a href="#本地-AI-Agent，可能才刚刚开始" class="headerlink" title="本地 AI Agent，可能才刚刚开始"></a>本地 AI Agent，可能才刚刚开始</h1><p>不过不得不说。</p>
+<p>Claude Code + Ollama 这一套玩法，确实让人第一次感受到：</p>
+<h1 id="AI-正在从聊天工具，变成真正的生产力工具。"><a href="#AI-正在从聊天工具，变成真正的生产力工具。" class="headerlink" title="AI 正在从聊天工具，变成真正的生产力工具。"></a>AI 正在从聊天工具，变成真正的生产力工具。</h1><p>尤其随着：</p>
+<ul>
+<li>Qwen3</li>
+<li>DeepSeek</li>
+<li>GLM</li>
+<li>Gemma</li>
+</ul>
+<p>这些本地模型不断升级。</p>
+<p>未来：</p>
+<p>完全本地化的 AI Agent。</p>
+<p>很可能会越来越强。</p>
+<p>而对于很多开发者来说：</p>
+<p>一个：</p>
+<ul>
+<li>完全本地</li>
+<li>零 API 成本</li>
+<li>无 Token 焦虑</li>
+</ul>
+<p>的 AI 开发助手。</p>
+<p>吸引力确实越来越大。</p>
 
     </article>
     
@@ -416,7 +658,7 @@ pre:active {
     <div class="article-catelogue--wrapper">
       <div class="catelogue catelogue-1">
         <h3>目录</h3>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Claude-Code-Ollama%EF%BC%88%E7%94%B5%E8%84%91%E6%80%A7%E8%83%BD%E4%B8%8D%E8%A1%8C%E7%9A%84%E8%AF%9D%E9%83%A8%E7%BD%B2%E9%B8%A1%E8%82%8B%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">Claude Code + Ollama（电脑性能不行的话部署鸡肋）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">1.1.</span> <span class="toc-text">一、前期准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%BC%80%E5%A7%8B%E9%83%A8%E7%BD%B2"><span class="toc-number">1.2.</span> <span class="toc-text">二、开始部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85ollama%E5%92%8C%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.安装ollama和模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AEccswitch"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.配置ccswitch</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%90%AF%E5%8A%A8%E8%B7%AF%E7%94%B1"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">配置启动路由</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%A3%80%E6%9F%A5%E6%98%AF%E5%90%A6%E5%BC%80%E5%90%AF%E8%99%9A%E6%8B%9F%E5%8C%96%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.检查是否开启虚拟化功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-cc-switch-%E9%85%8D%E7%BD%AE%E4%BE%9B%E5%BA%94%E5%95%86"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.cc switch 配置供应商</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%89%93%E5%BC%80%E5%BC%80%E5%8F%91%E8%80%85%E6%A8%A1%E5%BC%8Fclaudcode"><span class="toc-number">1.2.5.</span> <span class="toc-text">5.打开开发者模式claudcode</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E6%9C%89%E4%BA%BA%E4%BC%9A%E7%96%91%E9%97%AE%EF%BC%9AClaude-Code-%E5%88%B0%E5%BA%95%E5%BC%BA%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">可能有人会疑问：Claude Code 到底强在哪里？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ollama-Claude-Code-%E6%98%AF%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">Ollama + Claude Code 是怎么实现的？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AI-%E6%AD%A3%E5%9C%A8%E7%9C%9F%E6%AD%A3%E5%B7%A5%E4%BD%9C%E7%9A%84%E6%84%9F%E8%A7%89"><span class="toc-number">4.</span> <span class="toc-text">AI 正在真正工作的感觉</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%86%E6%9C%AC%E5%9C%B0%E6%A8%A1%E5%9E%8B%E7%9B%AE%E5%89%8D%E4%BB%8D%E7%84%B6%E5%AD%98%E5%9C%A8%E6%98%8E%E6%98%BE%E7%9F%AD%E6%9D%BF"><span class="toc-number">6.</span> <span class="toc-text">但本地模型目前仍然存在明显短板</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E6%A8%A1%E6%80%81%E5%85%BC%E5%AE%B9%E6%80%A7%E7%9B%AE%E5%89%8D%E9%97%AE%E9%A2%98%E4%B9%9F%E4%B8%8D%E5%B0%91"><span class="toc-number">7.</span> <span class="toc-text">多模态兼容性目前问题也不少</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vision-%E5%A4%9A%E6%A8%A1%E6%80%81%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-number">8.</span> <span class="toc-text">Vision 多模态兼容性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0-AI-Agent%EF%BC%8C%E5%8F%AF%E8%83%BD%E6%89%8D%E5%88%9A%E5%88%9A%E5%BC%80%E5%A7%8B"><span class="toc-number">9.</span> <span class="toc-text">本地 AI Agent，可能才刚刚开始</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AI-%E6%AD%A3%E5%9C%A8%E4%BB%8E%E8%81%8A%E5%A4%A9%E5%B7%A5%E5%85%B7%EF%BC%8C%E5%8F%98%E6%88%90%E7%9C%9F%E6%AD%A3%E7%9A%84%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7%E3%80%82"><span class="toc-number">10.</span> <span class="toc-text">AI 正在从聊天工具，变成真正的生产力工具。</span></a></li></ol>
       </div>
       
         <div class="catelogue catelogue-2">
